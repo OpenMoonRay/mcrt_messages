@@ -72,8 +72,8 @@ variants = [
     [   # variant 6
         'os-rocky-9',
         'opt_level-optdebug',
-        'refplat-vfx2022.0',
-        'gcc-9.3.x.1'
+        'refplat-vfx2026.0',
+        'gcc-14.2.x'
     ],
 ]
 
@@ -86,12 +86,11 @@ for i, variant in enumerate(variants):
 
 requires = [
     'arras4_core-4.10',
-    'jsoncpp-1.9.5.x',
+    'jsoncpp-1.9',
 ]
 
 private_build_requires = [
-    'cmake_modules-1.1',
-    'python_lib-2.7'
+    'cmake_modules-2.0'
 ]
 
 commandstr = lambda i: "cd build/"+os.path.join(*variants[i])+"; ctest -j $(nproc)"
